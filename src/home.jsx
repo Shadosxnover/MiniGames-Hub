@@ -29,7 +29,7 @@ const MinigameLanding = () => {
                             alt={minigame.name}
                             className="w-full h-40 object-cover rounded-lg mb-4"
                         />
-                        <button onClick={() => window.location.href = `/minigame${minigame.id}`} className="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-500 transition">
+                        <button onClick={() => window.location.href = `/minigames-app/minigame${minigame.id}`} className="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-500 transition">
                             Play Now
                         </button>
                     </div>
