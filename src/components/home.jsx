@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MinigameLanding = () => {
+    const navigate = useNavigate();
+    
     const minigames = [
         { id: 1, name: 'Minigame 1', image: 'https://cdn.dribbble.com/users/754943/screenshots/3745104/media/b5b85b9b062107e07eef68d20c30ee44.png?resize=400x300&vertical=center' },
         { id: 2, name: 'Minigame 2', image: 'https://static.vecteezy.com/system/resources/thumbnails/042/410/136/small/tic-tac-toe-xo-game-hand-drawn-grid-doodle-template-illustration-vector.jpg' },
@@ -22,21 +25,22 @@ const MinigameLanding = () => {
                         key={minigame.id}
                         className="bg-gradient-to-r from-blue-500 via-teal-500 to-pink-500 p-5 rounded-lg shadow-lg shadow-blue-500/50 transform transition duration-300 hover:scale-105"
                     >
-
                         <h2 className="text-white text-2xl font-semibold mb-3">{minigame.name}</h2>
                         <img
                             src={minigame.image}
                             alt={minigame.name}
                             className="w-full h-40 object-cover rounded-lg mb-4"
                         />
-                        <button onClick={() => window.location.href = `/minigames-app/minigame${minigame.id}`} className="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-500 transition">
+                        <button 
+                            onClick={() => navigate(`/minigame${minigame.id}`)} 
+                            className="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-500 transition"
+                        >
                             Play Now
                         </button>
                     </div>
                 ))}
             </div>
         </div>
-
     );
 };
 
