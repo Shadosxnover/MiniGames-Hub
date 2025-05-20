@@ -12,7 +12,7 @@ const MinigameLanding = () => {
         { 
             id: 1, 
             name: 'Higher or Lower', 
-            image: 'https://img.freepik.com/free-vector/colorful-up-down-arrows-3d-style_1017-30386.jpg',
+            image: 'assets/higher_or_lower.png',
             icon: <FaArrowsAltV className="text-blue-300" />,
             url: '/minigame1'
         },
@@ -89,7 +89,6 @@ const MinigameLanding = () => {
         }
     };
 
-    // Handle routing or external navigation
     const handleGameClick = (minigame) => {
         if (minigame.url.startsWith('http')) {
             window.open(minigame.url, '_blank');
@@ -153,7 +152,6 @@ const MinigameLanding = () => {
                                 alt={minigame.name}
                                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            {/* Removed the overlay completely for full brightness */}
                         </div>
                         <div className="p-8">
                             <div className="flex items-center mb-5">
