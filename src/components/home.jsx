@@ -108,25 +108,38 @@ const MinigameLanding = () => {
                 initial={{ y: -30, opacity: 0.9 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 50, delay: 0.1 }}
-                className="mt-10 mb-10"
+                className="mt-10 mb-16"
             >
                 <h1 className="relative py-4 flex justify-center items-center">
-                    <span className="absolute bg-gradient-to-r from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-5xl md:text-7xl font-extrabold text-transparent text-center blur-sm opacity-40 select-none pointer-events-none">
+                    <span className="absolute bg-gradient-to-r from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-5xl md:text-7xl font-extrabold text-transparent text-center blur-xl opacity-70 select-none pointer-events-none animate-pulse">
                         Welcome to Minigames Hub
                     </span>
-                    <span className="bg-gradient-to-r from-blue-500 via-teal-500 to-pink-500 bg-clip-text text-5xl md:text-7xl font-extrabold text-transparent text-center z-10 drop-shadow-lg">
+                    
+                    <span 
+                        className="bg-clip-text text-5xl md:text-7xl font-extrabold text-transparent text-center z-10"
+                        style={{
+                            backgroundImage: 'linear-gradient(90deg, #3b82f6, #14b8a6, #ec4899, #3b82f6)',
+                            backgroundSize: '300% 100%',
+                            animation: 'gradientMove 8s infinite linear',
+                            textShadow: '0 0 15px rgba(59,130,246,0.5), 0 0 30px rgba(236,72,153,0.3), 0 0 45px rgba(20,184,166,0.3)',
+                            paddingBottom: '10px'
+                        }}
+                    >
                         Welcome to Minigames Hub
                     </span>
                 </h1>
-                <p className="text-gray-300 text-center mt-2 text-lg md:text-xl font-medium">
-                    Play fun and simple games instantly!
-                </p>
-                <motion.div 
-                    className="w-24 h-1 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto mt-4 rounded-full shadow-lg"
-                    initial={{ width: 0 }}
-                    animate={{ width: '6rem' }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
-                />
+                
+                <div className="mt-8">
+                    <p className="text-gray-300 text-center text-lg md:text-xl font-medium">
+                        Play fun and simple games instantly!
+                    </p>
+                    <motion.div 
+                        className="w-24 h-1 bg-gradient-to-r from-blue-500 to-pink-500 mx-auto mt-4 rounded-full shadow-lg"
+                        initial={{ width: 0 }}
+                        animate={{ width: '6rem' }}
+                        transition={{ delay: 0.3, duration: 0.5 }}
+                    />
+                </div>
             </motion.div>
 
             <motion.div 

@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.glow {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+}
+
+.glow-pink {
+    text-shadow: 0 0 15px rgba(236, 72, 153, 0.8), 0 0 30px rgba(236, 72, 153, 0.6);
+}
+
+.glow-teal {
+    text-shadow: 0 0 15px rgba(20, 184, 166, 0.8), 0 0 30px rgba(20, 184, 166, 0.6);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3b82f6, #14b8a6, #ec4899);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #2563eb, #0d9488, #db2777);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 #1f2937;
+}
+
+.glow-animate {
+    animation: glow-pulse 3s infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% {
+        text-shadow: 0 0 5px rgba(59, 130, 246, 0.8), 0 0 10px rgba(59, 130, 246, 0.6);
+    }
+    33% {
+        text-shadow: 0 0 5px rgba(20, 184, 166, 0.8), 0 0 10px rgba(20, 184, 166, 0.6);
+    }
+    66% {
+        text-shadow: 0 0 5px rgba(236, 72, 153, 0.8), 0 0 10px rgba(236, 72, 153, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(59, 130, 246, 0.8), 0 0 10px rgba(59, 130, 246, 0.6);
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
