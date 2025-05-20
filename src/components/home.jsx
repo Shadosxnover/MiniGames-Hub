@@ -40,28 +40,28 @@ const MinigameLanding = () => {
         { 
             id: 5, 
             name: 'Cosmic Cleanup', 
-            image: 'https://img.freepik.com/free-vector/flat-design-galaxy-background_23-2149497647.jpg',
+            image: 'assets/cosmic-cleanup.png',
             icon: <FaRocket className="text-purple-300" />,
             url: 'https://cosmic-cleanup.netlify.app/'
         },
         { 
             id: 6, 
             name: '3D Snake Game', 
-            image: 'https://cdn.dribbble.com/users/3362824/screenshots/15653498/snake_gif.gif',
+            image: 'assets/3d-snake-game.png',
             icon: <GiSnake className="text-emerald-300" />,
             url: 'https://shadosxnover.github.io/3d-snake-game/'
         },
         { 
             id: 7, 
             name: '3D Dice Roll', 
-            image: 'https://cdn.dribbble.com/users/6533/screenshots/2072085/media/06c5125455317a0885f3c7d2a132b6d5.gif',
+            image: 'assets/3d-dice-roller.png',
             icon: <FaDice className="text-red-300" />,
             url: 'https://shadosxnover.github.io/3D-Dice-Roll/'
         },
         { 
             id: 8, 
             name: 'Box Mind Game', 
-            image: 'https://cdn.dribbble.com/users/1338391/screenshots/15322229/media/28105948b7b756becebe9e3f4ab92b02.jpg',
+            image: 'assets/mind-box-game.png',
             icon: <FaBrain className="text-orange-300" />,
             url: 'https://shadosxnover.github.io/Box-Mind-Game/'
         },
@@ -134,15 +134,15 @@ const MinigameLanding = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl mt-6 pb-12"
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl mt-6 pb-12"
             >
                 {minigames.map((minigame) => (
                     <motion.div
                         key={minigame.id}
                         variants={itemVariants}
                         whileHover={{ 
-                            scale: 1.04,
-                            boxShadow: "0 8px 32px 0 rgba(59,130,246,0.25)",
+                            scale: 1.03,
+                            boxShadow: "0 10px 40px 0 rgba(59,130,246,0.3)",
                             borderColor: "#3b82f6"
                         }}
                         className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl border-2 border-gray-700 transition-all duration-300"
@@ -151,25 +151,24 @@ const MinigameLanding = () => {
                             <img
                                 src={minigame.image}
                                 alt={minigame.name}
-                                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            {/* Reduced opacity overlay to improve image brightness */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-gray-900/10 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                            {/* Removed the overlay completely for full brightness */}
                         </div>
-                        <div className="p-6">
-                            <div className="flex items-center mb-4">
-                                <div className="p-3 rounded-full bg-gray-700 mr-3 shadow-md">
+                        <div className="p-8">
+                            <div className="flex items-center mb-5">
+                                <div className="p-4 rounded-full bg-gray-700 mr-4 shadow-md">
                                     {minigame.icon}
                                 </div>
-                                <h2 className="text-white text-2xl font-bold tracking-wide">{minigame.name}</h2>
+                                <h2 className="text-white text-3xl font-bold tracking-wide">{minigame.name}</h2>
                             </div>
                             <motion.button 
                                 whileHover={{ scale: 1.05, boxShadow: "0 0 16px #ec4899" }}
                                 whileTap={{ scale: 0.97 }}
                                 onClick={() => handleGameClick(minigame)} 
-                                className="w-full bg-gradient-to-r from-blue-500 via-teal-400 to-pink-500 text-white py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg shadow-pink-500/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink-400"
+                                className="w-full bg-gradient-to-r from-blue-500 via-teal-400 to-pink-500 text-white py-4 px-6 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 shadow-lg shadow-pink-500/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink-400"
                             >
-                                <FaPlay /> Play Now
+                                <FaPlay className="text-xl" /> Play Now
                             </motion.button>
                         </div>
                     </motion.div>
